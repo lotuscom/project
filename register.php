@@ -39,17 +39,19 @@
                 echo "<script>alert('ชื่อบัญชีผู้ใช้ของคุณได้ถูกใช้งานแล้ว')</script>";
             }
             
-        }
+         
 
         
 
 
-        else if (count($errors) == 0) { //ถ้านับแล้ว = 0 
-            $password = md5($password_1);
-            $sql = $userdata->registration($username,$password,$firstname,$lastname);   
-            echo "<script>alert('ลงทะเบียนสำเร็จแล้ว')</script>";
-            echo "<script>window.location.href='login.php'</script>";
-        } 
+            else if (count($errors) == 0) { //ถ้านับแล้ว = 0 
+                $password = md5($password_1);
+                $sql = $userdata->registration($username,$password,$firstname,$lastname);   
+                echo "<script>alert('ลงทะเบียนสำเร็จแล้ว')</script>";
+                echo "<script>window.location.href='login.php'</script>";
+            } 
+
+        }
 
     }
 
