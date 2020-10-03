@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    /*background-image: url("/image/bg.jpg");*/
+    background-image: url("/image/22.jpg");
+}
+
+.container-login100 {
+    background-image: url("/image/22.jpg");
+}

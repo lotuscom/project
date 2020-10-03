@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background: #a84bac;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr  ;
+    padding-top: 1rem;
+    
+
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    justify-items: center;
+    padding-top: 0.5rem;
+    
+    
+    
+}
+
+.menu li {
+
+    list-style: none;
+
+}
+
+
+
+.menu li > a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    transition: .3s ease-in-out;
+    
+}
+
+.menu li > a:hover {
+    background: turquoise;
+    padding: 5px 10px;
+    border-radius: 5px;
+    
+}
+
+.hamburger {
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger:focus {
+    outline: none;
+}
+
+.btn {
+    margin-top: 0.5rem;
+    justify-self: end;
+}
+
+.button {
+
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: .3s ease-in-out;
+    
+    
+    
+}
+
+.button:hover {
+
+    background: rgb(233, 45, 45);
+    color: white;
+
+}
+
+
+#hero {
+    width: 100%;
+  height: 90vh;
+  background: url("https://www.rmutp.ac.th/web2561/wp-content/uploads/2020/08/DSC_1456.jpg") top center;
+  background-size: cover;
+  position: relative;
+}
+
+
+#hero .hero-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  #hero h3 {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 26px;
+    padding: 10px 30px;
+    margin-bottom: 30px;
+    border-radius: 50px;
+  }
+  
+  #hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  #hero h2 {
+    color: white;
+    margin-bottom: 40px;
+    font-size: 24px;
+    margin-top: 0.5rem;
+  }
+
+  #hero:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+.admin__footer {
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+}
+
+.admin__footer p {
+    padding-top: 20px;
+}
+
+
+/**************************mobile**********************/
+
+@media only screen and (max-width: 480px) {
+    .menu {   
+        display: none;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 8rem;
+        
+    }
+
+    .menu.show {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height:auto;
+    }
+
+    .hamburger {
+        display: inline-block;
+        padding-right: 2rem;
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .btn {
+        margin: 1rem;
+        justify-self: center;
+    }
+    
+    .button {
+
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        transition: .3s ease-in-out;
+    }
+    
+    #hero {
+        width: 100%;
+        height: 90vh;
+
+    }
+
+    img {
+        width: 300px;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    #hero h1 {
+        margin: 0 0 10px 0;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 56px;
+        text-transform: uppercase;
+        color: white;
+      }
+
+    #hero h2 {
+        color: white;
+        margin-bottom: 40px;
+        font-size: 18px;
+        margin-top: 0.5rem;
+      }
+
+
+    #hero h3 {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 20px;
+        padding: 10px 30px;
+        margin-bottom: 30px;
+        border-radius: 50px;
+      }
+
+    #hero .hero-container {
+          padding: 0;
+          padding-right: 2rem;
+      }
+
+}
+
+/**************************End mobile**********************/
+
+
+
+@media only screen and (max-width: 380px) {
+    .menu {   
+        display: none;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 4rem;
+        
+    }
+
+    
+
+    
+
+    .menu.show {
+        display: grid;
+        grid-template-columns: 1fr;
+        
+        
+    }
+
+    header {
+        height:auto;
+    }
+
+    .hamburger {
+        display: inline-block;
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .btn {
+        margin: 1rem;
+        justify-self: center;
+    }
+    
+    .button {
+
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        transition: .3s ease-in-out;
+    }
+    
+    #hero {
+        width: 100%;
+        height: 90vh;
+
+    }
+
+    img {
+        width: 320px;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    #hero h1 {
+        margin: 0 0 10px 0;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 56px;
+        text-transform: uppercase;
+        color: white;
+      }
+
+
+      #hero h2 {
+        color: white;
+        margin-bottom: 40px;
+        font-size: 18px;
+        margin-top: 0.5rem;
+      }
+
+
+      #hero h3 {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 20px;
+        padding: 10px 30px;
+        margin-bottom: 30px;
+        border-radius: 50px;
+      }
+    
+
+}
+
+/**************************End mobile**********************/

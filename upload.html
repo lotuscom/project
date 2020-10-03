@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/upload.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <div class="nav-grid">
+                    <div class="logo">
+                        <img src="https://eng.rmutp.ac.th/web2558/wp-content/uploads/2018/08/eng-logo.png" alt="">
+                    </div>
+                    <button class="hamburger" id="hamburger">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="menu" id="menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="document.html">Document</a></li>
+                        <li><a href="upload.html">Upload</a></li>
+                        <div class="btn">
+                        <a href="#" class="button">Logout</a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-form">
+
+        <form action="" id="form-upload">
+            <h1>รายละเอียดของ เอกสาร</h1>
+
+
+            <div class="item-form">
+                <label for="">เลขที่เอกสาร</label>
+                <input type="text" placeholder="เลขที่เอกสาร">
+                <span class="fa-stack">
+                    <!-- The icon that will wrap the number -->
+                    <span class="fa fa-square-o fa-stack-2x"></span>
+                    <!-- a strong element with the custom content, in this case a number -->
+                    <strong class="fa-stack-1x">
+                        123    
+                    </strong>
+                </span>
+            </div>
+
+            <div class="item-form">
+                <label for="">เรื่อง</label>
+                <input type="text" placeholder="เรื่อง">
+                <i class="fa fa-file" aria-hidden="true"></i>
+            </div>
+           
+            <div class="item-form">
+                <label for="">ผู้เกี่ยวข้องในเอกสาร</label>
+                <textarea id="story" name="story" rows="5" cols="33">
+                      
+                    </textarea>
+            </div>
+
+            <div class="file-upload">
+                <label for="">เลือกไฟล์</label>
+                <input class="file-upload__input" type="file" name="myFile" id="myFile" accept=".pdf">
+                <button class="file-upload__button" type="button">Choose File(s)</button>
+                <span class="file-upload__label"></span> 
+              </div> 
+
+
+
+
+
+
+
+
+
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+    <footer class="admin__footer">
+        <p>© Copyright 2020. All right</p> 
+
+    </footer>
+
+
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/upload.js"></script>
+
+
+</body>
+
+</html>
