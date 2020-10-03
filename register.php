@@ -25,6 +25,7 @@
         if ($password_1 != $password_2) {
             array_push($errors,"รหัสผ่านของท่านไม่ตรงกัน");
             echo "<script>alert('กรุณากรอก : รหัสผ่านให้ตรงกัน')</script>";
+            
         }
 
 
@@ -37,6 +38,7 @@
             if ($result['username'] === $username) {
                 array_push($errors,"Username alrdy exists");
                 echo "<script>alert('ชื่อบัญชีผู้ใช้ของคุณได้ถูกใช้งานแล้ว')</script>";
+                echo "<script>window.location.href='register.php'</script>";
             }
             
          
@@ -118,7 +120,7 @@
 
                     <div class="text-center p-t-90">
 						<a class="txt1" href="#">
-						Already a member ? <a href="login.html">Sign In</a>
+						Already a member ? <a href="login.php">Sign In</a>
 						</a>
 					</div>
 
