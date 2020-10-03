@@ -113,7 +113,7 @@
                                   
                                   <td><a href="update.php?id=<?php echo $row['id'];?>" class="edit-btn">Edit</a></td>
                                   
-                                  <td><a href="delete.php?id=<?php echo $row['id'];?>" class="delete-btn">Delete</a></td>
+                                  <td><a href="delete.php?del=<?php echo $row['id'];?>" class="delete-btn">Delete</a></td>
                             
                               </tr>
       

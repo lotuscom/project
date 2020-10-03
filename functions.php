@@ -6,6 +6,12 @@
     define('DB_PASS','');
     define('DB_NAME','project');
 
+    
+
+
+
+    
+
     class DB_con {
         function __construct() {
             $conn = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
@@ -50,19 +56,29 @@
             return $result;
         }
 
+        public function fetchid() {
+            $result = mysqli_query($this->dbcon, "SELECT * FROM tb_user WHERE id = '".$_SESSION["id"]."'");
+            return $result;
+        }
+
+        public function fetchdocument() {
+            $result = mysqli_query($this->dbcon, "SELECT * FROM tb_document");
+            return $result;
+        }
+
 
         public function fetchonerecord($userid){
             $result = mysqli_query($this->dbcon,"SELETE * FROM tb_user WHERE id = '$userid' ");
             return $result;
         }
 
-        public function update($userid,$status){
-            $result = mysqli_query($this->dbcon,"UPDATE tb_user SET status = '$status', WHERE id = $userid");
+        public function update($userid){
+            $result = mysqli_query($this->dbcon,"UPDATE tb_user SET status = '1' WHERE id = $userid");
             return $result;
 
         }
 
-        public function deleterecord($userid)
+        public function delete($userid)
     {
         $deleterecord = mysqli_query($this->dbcon,"DELETE FROM tb_user WHERE id ='$userid'");
         return $deleterecord;
@@ -72,6 +88,12 @@
         $sumuser = mysqli_query($this->dbcon,"SELECT  * from tb_user");
         return $sumuser;
     }
+
+        public function upload($id,$document_no,$topic,$detail,$newname){
+            $upload = mysqli_query($this->dbcon,"INSERT INTO tb_document (sender_id,document_no,topic,detail,file) 
+            VALUES('$id','$document_no','$topic','$detail','$newname')");
+            return $upload;
+        }
 
 
     }

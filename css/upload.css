@@ -72,6 +72,7 @@ header {
     outline: none;
 }
 
+
 .btn {
     margin-top: 0.5rem;
     justify-self: end;
@@ -118,6 +119,8 @@ header {
     padding-top: 1rem;
     text-align: center;
 }
+
+
 
 /* ************************* Form ************************ */
 

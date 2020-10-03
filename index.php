@@ -1,3 +1,17 @@
+<?php
+
+            session_start();
+
+
+            if ($_SESSION['id'] == "") {
+                header("location: login.php");
+            } else {
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,9 +40,9 @@
                     <ul class="menu" id="menu">
                         <li><a href="index.php">Home</a></li>
                         <li><a href="document.php">Document</a></li>
-                        <li><a href="upload.php">Upload</a></li>
+                        <li><a href="upload3.php">Upload</a></li>
                         <div class="btn">
-                        <a href="#" class="button">Logout</a>
+                        <a href="logout.php" class="button">Logout</a>
                         </div>
                     </ul>
                 </div>
@@ -63,3 +77,10 @@
 </body>
 
 </html>
+
+
+<?php
+
+}
+
+?>
