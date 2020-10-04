@@ -7,13 +7,13 @@
 
     if (isset($_POST['reg_user'])) {
         
-        $username =  $_POST['username'];
-        $password_1 =  $_POST['password_1'];
-        $password_2 =  $_POST['password_2'];
-        $firstname =  $_POST['firstname'];
-        $lastname =  $_POST['lastname'];
+        $username = $_POST['username'];
+        $password_1 = $_POST['password_1'];
+        $password_2 = $_POST['password_2'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
 
-        if (empty($username)) { //กรณีถ้ามันเป็นค่าว่าง
+        if (empty($username)) {
             array_push($errors);
         }
         if (empty($password_1)) {
@@ -25,11 +25,8 @@
         if ($password_1 != $password_2) {
             array_push($errors,"รหัสผ่านของท่านไม่ตรงกัน");
             echo "<script>alert('กรุณากรอก : รหัสผ่านให้ตรงกัน')</script>";
-            
         }
 
-
-        
         
         $sql1= $userdata->usernameavailable($username);
         $result = mysqli_fetch_assoc($sql1);
@@ -41,20 +38,17 @@
                 echo "<script>window.location.href='register.php'</script>";
             }
             
-         
+        }
 
         
 
 
-            else if (count($errors) == 0) { //ถ้านับแล้ว = 0 
-                $password = md5($password_1);
-                $sql = $userdata->registration($username,$password,$firstname,$lastname);   
-                echo "<script>alert('ลงทะเบียนสำเร็จแล้ว')</script>";
-                echo "<script>window.location.href='login.php'</script>";
-            } 
-
-        }
-
+        else if (count($errors) == 0) {
+            $password = md5($password_1);
+            $sql = $userdata->registration($username,$password,$firstname,$lastname);   
+            echo "<script>alert('ลงทะเบียนสำเร็จแล้ว')</script>";
+            echo "<script>window.location.href='login.php'</script>";
+        } 
     }
 
 

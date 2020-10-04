@@ -84,9 +84,20 @@
         return $deleterecord;
     }
 
+    public function deletedoc($docid)
+    {
+        $deleterecord = mysqli_query($this->dbcon,"DELETE FROM tb_document WHERE id ='$docid'");
+        return $deleterecord;
+    }
+
         public function sumuser() {
         $sumuser = mysqli_query($this->dbcon,"SELECT  * from tb_user");
         return $sumuser;
+    }
+
+    public function sumdoc() {
+        $sumdoc = mysqli_query($this->dbcon,"SELECT  * from tb_document");
+        return $sumdoc;
     }
 
         public function upload($id,$document_no,$topic,$detail,$newname){
