@@ -1,8 +1,11 @@
 <?php
-                 session_start();
+                session_start();
                 if ($_SESSION['id'] == "") {
                     header("location: login.php");
                 } else {
+
+
+                    $id = $_SESSION['id'];
 
 ?>
 
@@ -60,10 +63,13 @@
         <table id="customers">
                         <tr>
                           <th>ID</th>
-                          <th>sender_id</th>
                           <th>เลขที่เอกสาร</th>
                           <th>หัวเรื่อง</th>
                           <th>เนื้อหา</th>
+                          <th>แก้ไข</th>
+                          <th>ดูเนื้อหา</th>
+                          
+                          
                           
                           
                          
@@ -74,17 +80,18 @@
       
                           include_once('functions.php');
                           $fetchdocument = new DB_con();
-                          $result = $fetchdocument->fetchdocument();
+                          $result = $fetchdocument->fetchdocument($id);
                           while($row = mysqli_fetch_array($result)) {
                       ?>
       
                               <tr>
                                   <td><?php echo $row['id']; ?></td>
-                                  <td><?php echo $row['sender_id']; ?></td>
+                                  
                                   <td><?php echo $row['document_no']; ?></td>
                                   <td><?php echo $row['topic']; ?></td>
                                   <td><?php echo $row['detail']; ?></td>
-                                  
+                                  <td><a href="update_document.php?update=<?php echo $row['id'];?>" class="update-btn">Update</a></td>
+                                  <td><a href="upload/<?=$row["file"];?>"><?php echo $id;?></a></td>
                                 
                             
                               </tr>
@@ -96,8 +103,10 @@
                       ?>
       
                       </tbody>
+
                        
                       </table>
+                      <br>&nbsp</br> <br>&nbsp</br>
         </div>
     </section>
 
@@ -120,5 +129,6 @@
 
 <?php
 
-                }
-                ?>
+     }
+     
+?>

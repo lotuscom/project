@@ -49,7 +49,10 @@
         }
     
 
-
+        public function fetch_personal() {
+            $result = mysqli_query($this->dbcon,"SELECT * FROM tb_personal");
+            return $result;
+        }
 
         public function fetchdata() {
             $result = mysqli_query($this->dbcon, "SELECT * FROM tb_user");
@@ -61,8 +64,8 @@
             return $result;
         }
 
-        public function fetchdocument() {
-            $result = mysqli_query($this->dbcon, "SELECT * FROM tb_document");
+        public function fetchdocument($id) {
+            $result = mysqli_query($this->dbcon, "SELECT * FROM tb_document WHERE sender_id = '$id'");
             return $result;
         }
 
@@ -72,11 +75,16 @@
             return $result;
         }
 
-        public function update($userid){
-            $result = mysqli_query($this->dbcon,"UPDATE tb_user SET status = '1' WHERE id = $userid");
+        public function updatedocument($document_no, $topic, $detail, $id) {
+            $result = mysqli_query($this->dbcon, "UPDATE tb_document SET 
+                document_no = '$document_no',
+                topic = '$topic',
+                detail = '$detail'
+                WHERE id = '$id'
+            ");
             return $result;
-
         }
+
 
         public function delete($userid)
     {
@@ -104,6 +112,11 @@
             $upload = mysqli_query($this->dbcon,"INSERT INTO tb_document (sender_id,document_no,topic,detail,file) 
             VALUES('$id','$document_no','$topic','$detail','$newname')");
             return $upload;
+        }
+
+        public function fetchonerecord_document($id) {
+            $result = mysqli_query($this->dbcon, "SELECT * FROM tb_document WHERE id = '$id'");
+            return $result;
         }
 
 

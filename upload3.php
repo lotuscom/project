@@ -86,7 +86,17 @@
 
     <div class="container-form">
 
-        <form action="upload2.php" id="form-upload" method="post" enctype="multipart/form-data">
+        <?php 
+        
+                include('functions.php');
+                $personal = new DB_con();
+                $result = $personal->fetch_personal();
+                ?>
+        
+        
+        
+
+        <form action="upload2.php" id="form-upload"  name="add" method="post" enctype="multipart/form-data">
             <h1>รายละเอียดของ เอกสาร</h1>
 
 
@@ -121,6 +131,42 @@
                 <span class="file-upload__label"></span> 
               </div> 
 
+
+            <div class="input-option">
+                <div class="table-responsive">
+                    <table id="dynamic_field">
+                        <tr>
+                            <td>
+                                    <label for="">ชื่ออาจารย์ที่เกี่ยวข้อง</label>
+                                        <select name=""  id="form-control"> 
+                                            <option value="">---กรุณาเลือก---</option>
+
+                                            <?php while($row = mysqli_fetch_array($result)):; ?>
+
+
+                                                    <option value="">
+                                                    <?php echo $row["personal_name"]; 
+                                                    echo "&nbsp;&nbsp;&nbsp;";
+                                                    echo $row["personal_lastname"]; ?>
+                                                    
+                                                    </option>
+
+                                            <?php endwhile; ?>
+                                            
+                                        </select>
+                                </td>
+                                    <td>
+                                        <button id="addRow" type="button" class="btn btn-info btn-xs ">+</button>
+                                        &nbsp;
+                                        <button id="removeRow" type="button" class="btn btn-info btn-xs ">-</button>
+                                    </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            
+
             
             <div class="btn--doc">
                 <div>
@@ -141,6 +187,7 @@
 
 
         </form>
+        
     </div>
 
 
@@ -157,11 +204,50 @@
 
 
 
+    <!-- <script type="text/javascript">
+        $(function() {
+            $("#addRow").click(function() {
+                $("#myTbl").append($("#firstTr").clone());
+                
+            });
+            
+            $("#removeRow").click(function() {
+                if ($("#myTbl tr").size() > 2) {
+                    $("#myTbl tr:last").remove();
+                    $("#myTbl tr:last").remove();
+                } else {
+                    alert("ต้องมีรายการข้อมูลอย่างน้อย 2 รายการ");
+                }
+            });
+            (function() {
+                if ($("#myTbl6 tr").size() > 2) {
+                    $("#myTbl6 tr:last").remove();
+                    $("#myTbl6 tr:last").remove();
+                } else {
+                    alert("ต้องมีรายการข้อมูลอย่างน้อย 2 รายการ");
+                }
+            });
+        });
 
+    </script> -->
 
 
     <script src="js/jquery.js"></script>
     <script src="js/upload.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            let i = 1;
+            $('#addRow').click(function() {
+                i++;
+                $('#dynamic_field').append('<tr id="row'+i+'"><td><label for="">ชื่ออาจารย์ที่เกี่ยวข้อง</label><option value="">---กรุณาเลือก---</option><?php while($row = mysqli_fetch_array($result)):; ?><option value=""><?php echo $row["personal_name"];echo "&nbsp;&nbsp;&nbsp;";echo $row["personal_lastname"]; ?></option><?php endwhile; ?></select></td></tr>')
+            })
+
+
+        })
+    
+    
+    </script>
 
 
 </body>

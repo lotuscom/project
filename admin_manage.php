@@ -111,7 +111,7 @@
                                   <td><?php echo $row['lastname']; ?></td>
                                   <td><?php echo $row['status']; ?></td>
                                   
-                                  <td><a href="update.php?id=<?php echo $row['id'];?>" class="edit-btn">Edit</a></td>
+                                  <td><a href="update_user.php?id=<?php echo $row['id'];?>" class="edit-btn">Edit</a></td>
                                   
                                   <td><a href="delete.php?del=<?php echo $row['id'];?>" class="delete-btn">Delete</a></td>
                             
