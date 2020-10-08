@@ -1,109 +1,75 @@
 <!DOCTYPE html>
+<?php
+include_once('functions.php')
+?>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/test.css">
-
-    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ค้นหาข้อมูล : itoffside.com</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<style>
+body{
+margin-top: 20px;
+}
+.loading{
+background-image: url("ajax-loader.gif");
+background-repeat: no-repeat;
+display: none;
+height: 100px;
+width: 100px;
+}
+</style>
 </head>
 <body>
-
-            <div class="container">
-            <?php 
-        
-        include('functions.php');
-        $personal = new DB_con();
-        $result = $personal->fetch_personal();
-        ?>
-
-                <form action="db_adminmail.php" method="post">
-                    <table id="myTbl" class="table">
-                                            <tr id="firstTr">
-                                                <td>
-
-
-                                                    <div class="form-group">
-                                                        <div class="col-md-10">
-                                                            <div class="row">
-                                                                <label id="lblSurnameT" class="col-md-2 control-label font-noraml">ชื่ออาจารย์:</label>
-                                                                <div class="col-md-3">
-                                                                    <select class="form-control m-b" id="name[]" name="name[]" required="">
-                                                                        <option value="">---กรุณาเลือก---</option>
-                                                                        <?php while($row = mysqli_fetch_array($result)):;
-                
-                
-                ?>
-
-                                                                        <option value="<?php echo $ro1["personal_name"] ;
-                                                                                            echo "&nbsp;&nbsp;&nbsp;";
-                                                                                            echo $row["personal_lastname"];?>">
-                                                                            <?php echo $row["personal_name"];
-                                                                                            echo "&nbsp;&nbsp;&nbsp;";
-                                                                                            echo $row["personal_lastname"];?>
-                                                                        </option>
-                                                                        <?php endwhile;?>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        
-
-                                        </table>
-                                        <table width="500" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td>
-                                                    <button id="addRow" type="button" class="btn btn-info btn-xs ">+</button>
-                                                    &nbsp;
-                                                    <button id="removeRow" type="button" class="btn btn-info btn-xs ">-</button>
-                                                    &nbsp;
-                                                    &nbsp;
-                                                    &nbsp;
-                                                </td>
-                                            </tr>
-                                        </table><br>
-                                    <div class="form-group">
-                                                <input type="submit" name="actionm" value="ส่งข้อมูลเป็นEmail" id="dataModal" class="btn btn-info btn-xs " />
-
-                                    </div>
-                </form>
-                
-            
-            
-            
-            </div>
-
-
-
-    <script src="js/jquery.js"></script>
-    <script src="js/script.js"></script>
-
- <script type="text/javascript">
-        $(function() {
-            $("#addRow").click(function() {
-                $("#myTbl").append($("#firstTr").clone());
-                
-            });
-            
-
-            $("#removeRow").click(function() {
-                if ($("#myTbl tr").size() > 2) {
-                    $("#myTbl tr:last").remove();
-                    $("#myTbl tr:last").remove();
-                } else {
-                    alert("ต้องมีรายการข้อมูลอย่างน้อย 2 รายการ");
-                }
-            });
-            
-        
-           
-        });
-
-    </script>
-    
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<form class="form-inline" name="searchform" id="searchform">
+<div class="form-group">
+<label for="textsearch" >ชื่อสินค้า</label>
+<input type="text" name="itemname" id="itemname" class="form-control" placeholder="ข้อความ คำค้นหา!" autocomplete="off">
+</div>
+<button type="button" class="btn btn-primary" id="btnSearch">
+<span class="glyphicon glyphicon-search"></span>
+ค้นหา
+</button>
+</form>
+</div>
+</div>
+<div class="loading"></div>
+<div class="row" id="list-data" style="margin-top: 10px;">
+</div>
+</div>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function () {
+$("#btnSearch").click(function () {
+$.ajax({
+url: "search.php",
+type: "post",
+data: {itemname: $("#itemname").val()},
+beforeSend: function () {
+$(".loading").show();
+},
+complete: function () {
+$(".loading").hide();
+},
+success: function (data) {
+$("#list-data").html(data);
+}
+});
+});
+$("#searchform").on("keyup keypress",function(e){
+var code = e.keycode || e.which;
+if(code==13){
+$("#btnSearch").click();
+return false;
+}
+});
+});
+</script>
 </body>
 </html>

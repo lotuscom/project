@@ -176,6 +176,31 @@ section {
     padding-top: 2rem;
 }
 
+td > .update-btn {
+   
+}
+
+.update-btn {
+    border: none;
+    text-decoration: none;
+    color: #111;
+    background: rgb(251, 255, 0);
+    padding: 5px 7px;
+    border-radius: 0.25rem;
+    
+}
+
+
+.open-btn {
+    border: none;
+    text-decoration: none;
+    color: #111;
+    background: rgb(0, 162, 255);
+    padding: 5px 7px;
+    border-radius: 0.25rem;
+    
+}
+
 
 /**************************mobile**********************/
 

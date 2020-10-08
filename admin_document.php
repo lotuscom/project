@@ -1,4 +1,13 @@
+<?php
+                session_start();
+                if ($_SESSION['id'] == "") {
+                    header("location: admin_login.php");
+                } else {
 
+
+                    $id = $_SESSION['id'];
+
+?>
 
 
 
@@ -25,7 +34,7 @@
         </a>
             <div class="toolbar">
                 <button class="btn btn--primary">Add New </button>
-                <a href="" class="logout">logout</a>
+                <a href="admin_logout.php" class="logout">logout</a>
             </div>
         </header>
 
@@ -34,16 +43,16 @@
             <ul class="menu">
 
                 <li class="menu__item">
-                    <a href="index_admin.html" class="menu__link">สมาชิก</a>
+                    <a href="admin_index.php" class="menu__link">สมาชิก</a>
                 </li>
 
                 <li class="menu__item">
-                    <a href="admin_document.html" class="menu__link">เอกสารทั้งหมด</a>
+                    <a href="admin_document.php" class="menu__link">เอกสารทั้งหมด</a>
 
                 </li>
 
                 <li class="menu__item">
-                    <a href="" class="menu__link">จัดการสมาชิก</a>
+                    <a href="admin_manage.php" class="menu__link">จัดการสมาชิก</a>
 
                 </li>
 
@@ -66,7 +75,7 @@
                           $fetchdata = new DB_con();
                           $result = $fetchdata->sumdoc();
 
-                          echo  mysqli_num_rows($result). 'เอกสาร' ; 
+                          echo  mysqli_num_rows($result).  'เอกสาร' ; 
                           ?>
 
                     </div>
@@ -94,7 +103,7 @@
       
                           include_once('functions.php');
                           $fetchdocument = new DB_con();
-                          $result = $fetchdocument->fetchdocument();
+                          $result = $fetchdocument->fetchdocument_admin();
                           while($row = mysqli_fetch_array($result)) {
                       ?>
       
@@ -140,3 +149,8 @@
 
 </body>
 </html>
+
+<?php
+
+                        }
+                        ?>

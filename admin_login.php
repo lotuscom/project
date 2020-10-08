@@ -6,7 +6,7 @@
     
     if (isset($_POST['admin_login'])) {
         $username = $_POST['username'];
-        $password = md5($_POST['password']);
+        $password = $_POST['password'];
         
 
         $result = $userdata->loginadmin($username,$password);
@@ -14,22 +14,20 @@
 
         if ($num > 0) {
             $_SESSION['id'] = $num['id'];
-			$_SESSION['fname'] = $num['firstname'];
+            $_SESSION['fname'] = $num['firstname'];
             $_SESSION['lname'] = $num['lastname'];
-           
+            
             echo "<script>alert('ล็อคอินสำเร็จแล้ว')</script>";
-            echo "<script>window.location.href='index_admin.php'</script>";
-           
+            echo "<script>window.location.href='admin_index.php'</script>";
            
 
         } else {
-            echo "<script>alert('โปรกล็อคอินใหม่อีกครั้ง')</script>";
+            echo "<script>alert('ผู้ใช้หรือรหัสผ่านไม่ถูกต้อง')</script>";
             echo "<script>window.location.href='admin_login.php'</script>";
         }
     }
     
 ?>
-
 
 
 
@@ -56,7 +54,7 @@
 					<img src="image/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post">
 					<span class="login100-form-title">
 						Admin Login
 					</span>

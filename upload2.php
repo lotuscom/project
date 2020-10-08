@@ -9,7 +9,11 @@
             
             $document_no =  $_POST['docid'];
             $topic =  $_POST['topic'];
-            $detail =  $_POST['detail'];
+            $detail = $_POST['detail'];
+            $el = implode(' ', $detail);
+
+            echo $el;
+            
             
             
             if (empty($docid)) { //กรณีถ้ามันเป็นค่าว่าง
@@ -52,11 +56,15 @@
                 $fetchid = new DB_con();
                 $objQuery = $fetchid->fetchid();
                 $id = $_SESSION["id"];
+
+            
+                    
+                    $result = $fetchid->upload($id,$document_no,$topic,$el,$newname);
                 
-                $result = $fetchid->upload($id,$document_no,$topic,$detail,$newname);
                
-                 echo "<script>alert('อัพโหลดสำเร็จแล้ว')</script>";
-                 echo "<script>window.location.href='document.php'</script>";
+                    
+                //  echo "<script>alert('อัพโหลดสำเร็จแล้ว')</script>";
+                //  echo "<script>window.location.href='document.php'</script>";
 
             } else {
                 echo "<script>alert('อัพโหลดไม่สำเร็จ')</script>";

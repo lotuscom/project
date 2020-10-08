@@ -28,6 +28,8 @@
             $checkuser = mysqli_query($this->dbcon, "SELECT * FROM tb_user WHERE username = '$username'");
             return $checkuser;
         }
+
+        
     
 
         public function registration($username,$password,$firstname,$lastname){ // เพิ่มข้อมูลลงใน database
@@ -36,6 +38,8 @@
             return $reg;
         }
 
+       
+
         public function login($username,$password) { //เช็ค user pass ว่าตรงกับ database มั้ย
             $loginquery = mysqli_query($this->dbcon,"SELECT id, firstname,lastname,status
             FROM tb_user WHERE username = '$username' AND password = '$password'");
@@ -43,7 +47,7 @@
         }
 
         public function loginadmin($username,$password) { //เช็ค user pass ว่าตรงกับ database มั้ย
-            $loginadmin = mysqli_query($this->dbcon,"SELECT id, firstname,lastname,status
+            $loginadmin = mysqli_query($this->dbcon,"SELECT id, firstname,lastname
             FROM tb_admin WHERE username = '$username' AND password = '$password'");
             return $loginadmin;
         }
@@ -68,6 +72,13 @@
             $result = mysqli_query($this->dbcon, "SELECT * FROM tb_document WHERE sender_id = '$id'");
             return $result;
         }
+
+        public function fetchdocument_admin() {
+            $result = mysqli_query($this->dbcon, "SELECT * FROM tb_document ");
+            return $result;
+        }
+
+
 
 
         public function fetchonerecord($userid){
@@ -108,14 +119,25 @@
         return $sumdoc;
     }
 
-        public function upload($id,$document_no,$topic,$detail,$newname){
+        public function upload($id,$document_no,$topic,$el,$newname){
             $upload = mysqli_query($this->dbcon,"INSERT INTO tb_document (sender_id,document_no,topic,detail,file) 
-            VALUES('$id','$document_no','$topic','$detail','$newname')");
+            VALUES('$id','$document_no','$topic','$el','$newname')");
             return $upload;
+        }
+
+        public function upload_array($el){
+            $upload_array = mysqli_query($this->dbcon,"INSERT INTO tb_document (detail) 
+            VALUES('$el')");
+            return $upload_array;
         }
 
         public function fetchonerecord_document($id) {
             $result = mysqli_query($this->dbcon, "SELECT * FROM tb_document WHERE id = '$id'");
+            return $result;
+        }
+
+        public function serach() {
+            $result = mysqli_query($this->dbcon, "SELECT * FROM tb_document WHERE detail like '%{$_POST['itemname']}%'");
             return $result;
         }
 

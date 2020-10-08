@@ -97,8 +97,8 @@
                     </table>
 
                     <button id="addRow" type="button" class="btn btn-info btn-xs ">+</button>
-                                                    &nbsp;
-                                                    <button id="removeRow" type="button" class="btn btn-info btn-xs ">-</button>
+                    &nbsp;
+                    <button id="removeRow" type="button" class="btn btn-info btn-xs ">-</button>
 
                   
                                        

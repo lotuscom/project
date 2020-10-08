@@ -33,7 +33,7 @@
         </a>
             <div class="toolbar">
                 <button class="btn btn--primary">Add New </button>
-                <a href="" class="logout">logout</a>
+                <a href="admin_logout.php" class="logout">logout</a>
             </div>
         </header>
 
@@ -42,16 +42,16 @@
             <ul class="menu">
 
                 <li class="menu__item">
-                    <a href="index_admin.php" class="menu__link">สมาชิก</a>
+                    <a href="admin_index.php" class="menu__link">สมาชิก</a>
                 </li>
 
                 <li class="menu__item">
-                    <a href="admin_document.html" class="menu__link">เอกสารทั้งหมด</a>
+                    <a href="admin_document.php" class="menu__link">เอกสารทั้งหมด</a>
 
                 </li>
 
                 <li class="menu__item">
-                    <a href="" class="menu__link">จัดการสมาชิก</a>
+                    <a href="admin_manage.php" class="menu__link">จัดการสมาชิก</a>
 
                 </li>
 

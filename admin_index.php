@@ -17,7 +17,7 @@
         </a>
             <div class="toolbar">
                 <button class="btn btn--primary">Add New </button>
-                <a href="" class="logout">logout</a>
+                <a href="admin_logout.php" class="logout">logout</a>
             </div>
         </header>
 
@@ -26,11 +26,11 @@
             <ul class="menu">
 
                 <li class="menu__item">
-                    <a href="" class="menu__link">สมาชิก</a>
+                    <a href="admin_index.php" class="menu__link">สมาชิก</a>
                 </li>
 
                 <li class="menu__item">
-                    <a href="admin_document.html" class="menu__link">เอกสารทั้งหมด</a>
+                    <a href="admin_document.php" class="menu__link">เอกสารทั้งหมด</a>
 
                 </li>
 
@@ -70,7 +70,17 @@
 
                 <div class="dashboard__item">
                     <div class="card">
-                        <strong>45</strong> เอกสาร
+
+                        <?php 
+
+                                include_once('functions.php');
+
+                                $fetchdata = new DB_con();
+                                $result = $fetchdata->sumdoc();
+
+                                echo  mysqli_num_rows($result). 'เอกสาร' ; 
+                        ?>
+                        
                     </div>
                 </div>
 
