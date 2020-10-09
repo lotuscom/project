@@ -12,7 +12,7 @@
             $detail = $_POST['detail'];
             $el = implode(' ', $detail);
 
-            echo $el;
+            
             
             
             
@@ -63,8 +63,8 @@
                 
                
                     
-                //  echo "<script>alert('อัพโหลดสำเร็จแล้ว')</script>";
-                //  echo "<script>window.location.href='document.php'</script>";
+                 echo "<script>alert('อัพโหลดสำเร็จแล้ว')</script>";
+                 echo "<script>window.location.href='document.php'</script>";
 
             } else {
                 echo "<script>alert('อัพโหลดไม่สำเร็จ')</script>";

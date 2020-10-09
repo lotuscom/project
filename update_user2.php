@@ -6,7 +6,7 @@
         $userid = $_GET['id'];
 
         $updatestatus = new DB_con();
-        $sql = $updatestatus->update_user($userid);
+        $sql = $updatestatus->update_user2($userid);
 
         if($sql) {
            /* echo "<script>alert('เปลี่ยนสถานะเรียบร้อยแล้ว')</script>";*/

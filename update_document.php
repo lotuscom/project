@@ -10,11 +10,12 @@
         $document_no =  $_POST['docid'];
         $topic =  $_POST['topic'];
         $detail =  $_POST['detail'];
+        $el = implode(' ', $detail);
 
-        $sql = $updatedata->updatedocument($document_no, $topic, $detail, $id);
+        $sql = $updatedata->updatedocument($document_no, $topic, $el, $id);
         if ($sql) {
-            // echo "<script>alert('Updated Successfully!');</script>";
-            // echo "<script>window.location.href='document.php'</script>";
+            echo "<script>alert('Updated Successfully!');</script>";
+            echo "<script>window.location.href='document.php'</script>";
         } else {
             echo "<script>alert('Something went wrong! Please try again!');</script>";
             echo "<script>window.location.href='update_document.php'</script>";
@@ -106,6 +107,7 @@
 
                     $id = $_GET['update'];
                     $update_document = new DB_con();
+                    $result = $update_document->fetch_personal();
                     $sql = $update_document->fetchonerecord_document($id);
                     while($row = mysqli_fetch_array($sql)) {
                 ?>
@@ -131,12 +133,43 @@
                 <i class="fa fa-file" aria-hidden="true"></i>
             </div>
            
-            <div class="item-form">
-                <label for="">ผู้เกี่ยวข้องในเอกสาร </label>
-                <textarea id="story" name="detail" rows="5" cols="33" value="<?php echo $row['detail']; ?>" >
-                      
-                    </textarea>
-            </div>
+                
+            <div class="table-responsive">
+                    <table id="myTbl">
+
+                        <tr id="firstTr">
+                            <td>
+                                <label for="">ชื่ออาจารย์ที่เกี่ยวข้อง</label>
+                                <select name="detail[]" id="form-control">
+                                    <option value="">---กรุณาเลือก---</option>
+
+                                    <?php while ($row = mysqli_fetch_array($result)) :; ?>
+
+
+                                        <option value="<?php echo $row["personal_name"];
+                                                        echo "&nbsp;&nbsp;&nbsp;";
+                                                        echo $row["personal_lastname"]; ?>">
+                                            <?php echo $row["personal_name"];
+                                            echo "&nbsp;&nbsp;&nbsp;";
+                                            echo $row["personal_lastname"]; ?>
+
+                                        </option>
+
+                                    <?php endwhile; ?>
+
+                                </select>
+                            </td>
+
+                        </tr>
+                    </table>
+                    <div class="btn-addremove">
+                        <button id="addRow" class="btn-add">+</button>
+
+                        <button id="removeRow" class="btn-remove">-</button>
+                    </div>
+
+                </div>
+
 
             
 
@@ -182,7 +215,25 @@
 
 
     <script src="js/jquery.js"></script>
-    <script src="js/upload.js"></script>
+        <script src="js/upload.js"></script>
+
+        <script type="text/javascript">
+            $(function() {
+                $("#addRow").click(function() {
+                    $("#myTbl").append($("#firstTr").clone());
+
+                });
+
+
+                $("#removeRow").click(function() {
+                    $("#myTbl tr:last").remove();
+                });
+
+
+
+
+            });
+        </script>
 
 
 </body>

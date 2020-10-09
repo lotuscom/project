@@ -179,7 +179,7 @@ if ($_SESSION['id'] == "") {
                     </div>
 
                     <div>
-                        <button class="btn-cancel"><a href="document.html">ยกเลิก</a></button>
+                        <button class="btn-cancel"><a href="document.php">ยกเลิก</a></button>
                     </div>
                 </div>
 

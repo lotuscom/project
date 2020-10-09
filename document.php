@@ -54,68 +54,19 @@
             </nav>
         </header>
 
-        <div class="search-container">
-            <form action="" name="searchform" id="searchform">
-                <input type="text" placeholder="Search.." name="search_text" id="search_text">
-                <button type="submit" id=btnSearch><i class="fa fa-search"></i></button>
-            </form>
+                <div class="container">
+                    <div class="search-container">
+                        <form action="" name="searchform" id="searchform">
+                            <input type="text" placeholder="Search.." name="search_text" id="search_text">
+                        
+                        </form>
+                    </div>
+                </div>
+        <div class="container">
+            <div id="result"></div>
         </div>
 
-        <div id="result"></div>
-
-
-        <section>
-            <div class="container">
-                <table id="customers">
-                    <tr>
-                        <th>ID</th>
-                        <th>เลขที่เอกสาร</th>
-                        <th>หัวเรื่อง</th>
-                        <th>เนื้อหา</th>
-                        <th>แก้ไข</th>
-                        <th>ดูเนื้อหา</th>
-
-
-
-
-
-                    </tr>
-
-                    <tbody>
-                        <?php
-
-                        include_once('functions.php');
-                        $fetchdocument = new DB_con();
-                        $result = $fetchdocument->fetchdocument($id);
-                        while ($row = mysqli_fetch_array($result)) {
-                        ?>
-
-                            <tr>
-                                <td><?php echo $row['id']; ?></td>
-
-                                <td><?php echo $row['document_no']; ?></td>
-                                <td><?php echo $row['topic']; ?></td>
-                                <td><?php echo $row['detail']; ?></td>
-                                <td><a class="update-btn" href="update_document.php?update=<?php echo $row['id']; ?>" class="update-btn">Update</a></td>
-
-                                <td><a class="open-btn" href="upload/<?= $row["file"]; ?>">เปิดไฟล์</a></td>
-
-
-                            </tr>
-
-                        <?php
-
-                        }
-
-                        ?>
-
-                    </tbody>
-
-
-                </table>
-                <br>&nbsp</br> <br>&nbsp</br>
-            </div>
-        </section>
+       
 
 
 
