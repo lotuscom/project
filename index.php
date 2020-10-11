@@ -40,7 +40,7 @@
                     <ul class="menu" id="menu">
                         <li><a href="index.php">Home</a></li>
                         <li><a href="document.php">Document</a></li>
-                        <li><a href="upload3.php">Upload</a></li>
+                        <li><a href="upload.php">Upload</a></li>
                         <div class="btn">
                         <a href="logout.php" class="button">Logout</a>
                         </div>

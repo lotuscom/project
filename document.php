@@ -6,14 +6,10 @@
             } else {
 
 
-                $id = $_SESSION['id'];
+                $id = $_SESSION['id']; // เก็บ ID ที่ login เข้ามา
 
 
 ?>
-
-
-
-
 
     <!DOCTYPE html>
     <html lang="en">
@@ -30,7 +26,7 @@
 
     <body>
 
-
+        <!-- START Header -->
         <header>
             <nav>
                 <div class="container">
@@ -44,7 +40,7 @@
                         <ul class="menu" id="menu">
                             <li><a href="index.php">Home</a></li>
                             <li><a href="document.php">Document</a></li>
-                            <li><a href="upload3.php">Upload</a></li>
+                            <li><a href="upload.php">Upload</a></li>
                             <div class="btn">
                                 <a href="logout.php" class="button">Logout</a>
                             </div>
@@ -54,6 +50,9 @@
             </nav>
         </header>
 
+        <!-- END Header -->
+
+        <!-- START Search -->
                 <div class="container">
                     <div class="search-container">
                         <form action="" name="searchform" id="searchform">
@@ -62,18 +61,29 @@
                         </form>
                     </div>
                 </div>
+
+
+        <!-- END Search -->
+
+        <!-- START Table -->
+
+
         <div class="container">
             <div id="result"></div>
         </div>
 
+        <!-- END Table -->
+
        
 
-
+        <!-- START Footer -->
 
         <footer class="footer">
             © Copyright 2020. All right
 
         </footer>
+
+        <!-- END Footer -->
 
 
 

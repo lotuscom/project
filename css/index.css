@@ -274,7 +274,13 @@ header {
 
 
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 320px) {
+
+    #hero .hero-container {
+        padding: 0;
+        
+    }
+
     .menu {   
         display: none;
         width: 100%;
@@ -300,6 +306,7 @@ header {
 
     .hamburger {
         display: inline-block;
+        
     }
 
     .nav-grid {
@@ -334,14 +341,14 @@ header {
     }
 
     img {
-        width: 320px;
+        width: 275px;
         padding-left: 0.5rem;
         padding-bottom: 0.5rem;
     }
 
     #hero h1 {
         margin: 0 0 10px 0;
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 700;
         line-height: 56px;
         text-transform: uppercase;
@@ -352,7 +359,7 @@ header {
       #hero h2 {
         color: white;
         margin-bottom: 40px;
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 0.5rem;
       }
 
