@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
+
 
 
 
@@ -10,6 +12,7 @@
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+   
 }
 
 header {
@@ -49,6 +52,7 @@ header {
     color: #fff;
     font-size: 20px;
     transition: .3s ease-in-out;
+    text-transform: uppercase;
     
 }
 
@@ -197,9 +201,207 @@ td > .update-btn {
 }
 
 
-/**************************mobile**********************/
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(32, 32, 32, .3) ;
+}
+
+.table td, .table th {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 16px;
+}
+
+.table th {
+    background-color:#ba68c8;
+    color: #ffffff;
+    
+}
+
+.table tbody tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+
+/* ********************mobile 320px ******************/
+
+@media only screen and (max-width: 360px) {
+
+
+    
+    .table {
+        margin-top: 60px;
+    }
+
+    .table thead , .table th{
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+
+    .table tr{
+        margin-bottom: 15px;
+    }
+
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        font-size: 15px;
+    }
+
+    
+
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+
+   
+
+    .menu {   
+        display: none;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 8rem;
+        
+    }
+
+    .menu.show {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height:auto;
+    }
+
+    .hamburger {
+        display: inline-block;
+        
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .btn {
+        margin: 1rem;
+        justify-self: center;
+    }
+    
+    .button {
+
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        transition: .3s ease-in-out;
+    }
+    
+    #hero {
+        width: 100%;
+        height: 90vh;
+
+    }
+
+    img {
+        width: 200px;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        height: 50px;
+        padding-top: 15px;
+      }
+    
+
+}
+
+
+/* ******************** END mobile 320px ******************/
+
+
+
+
+/**************************START mobile  480px**********************/
 
 @media only screen and (max-width: 480px) {
+
+    .table {
+        margin-top: 60px;
+    }
+
+    .table thead , .table th{
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+
+    .table tr{
+        margin-bottom: 15px;
+    }
+
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+
+    }
+
+    
+
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15;
+        font-weight: bold;
+        text-align: left;
+    }
+
+
+   
+
     .menu {   
         display: none;
         width: 100%;
@@ -254,7 +456,7 @@ td > .update-btn {
     }
 
     img {
-        width: 300px;
+        width: 400px;
         padding-left: 0.5rem;
         padding-bottom: 0.5rem;
     }
@@ -263,4 +465,364 @@ td > .update-btn {
 
 }
 
+/**************************End mobile 480px**********************/
+
+
+/**************************START mobile  768px**********************/
+
+
+@media only screen and (max-width: 768px) {
+
+    .table {
+        margin-top: 60px;
+    }
+
+    .table thead , .table th{
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+
+    .table tr{
+        margin-bottom: 15px;
+    }
+
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        font-size: 25px;
+
+    }
+
+    
+
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+
+   
+
+    .menu {   
+        display: none;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 8rem;
+        
+    }
+
+    .menu.show {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height:auto;
+    }
+
+    .hamburger {
+        display: inline-block;
+        font-size: 40px;
+        text-align: right;
+        padding-right: 2rem;
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .btn {
+        margin: 1rem;
+        justify-self: center;
+    }
+    
+    .button {
+
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        transition: .3s ease-in-out;
+    }
+
+    
+    
+    #hero {
+        width: 100%;
+        height: 90vh;
+
+    }
+
+    img {
+        width: 500px;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    
+
+}
+
+
+/**************************End mobile 768px**********************/
+
+/**************************START PC 1024px**********************/
+@media only screen and (max-width: 1024px) {
+
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    
+    
+    
+    
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    header {
+        width: 100%;
+        height: 80px;
+        background: #a84bac;
+    }
+    
+    .nav-grid {
+        display: grid;
+        grid-template-columns: 400px 1fr  ;
+        padding-top: 1rem;
+        
+    
+    }
+    
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        justify-items: center;
+        padding-top: 0.5rem;
+        
+        
+        
+    }
+    
+    .menu li {
+    
+        list-style: none;
+    
+    }
+    
+    
+    
+    .menu li > a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+        transition: .3s ease-in-out;
+        
+    }
+    
+    .menu li > a:hover {
+        background: turquoise;
+        padding: 5px 10px;
+        border-radius: 5px;
+        
+    }
+    
+    .hamburger {
+        background-color: transparent;
+        border: 0;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        display: none;
+    }
+    
+    .hamburger:focus {
+        outline: none;
+    }
+    
+    .btn {
+        margin-top: 0.5rem;
+        justify-self: end;
+    }
+    
+    .button {
+    
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 15px 15px;
+        text-align: center;
+        text-decoration: none;
+        
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        transition: .3s ease-in-out;
+        
+        
+        
+    }
+    
+    .button:hover {
+    
+        background: rgb(233, 45, 45);
+        color: white;
+    
+    }
+    
+    
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        height: 50px;
+        padding-top: 15px;
+      }
+    
+    
+      #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      
+      #customers tr:nth-child(even){background-color: #f2f2f2;}
+      
+      #customers tr:hover {background-color: #ddd;}
+      
+      #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+      }
+    
+    .search-container {
+        float: right;
+        margin: 0.5rem 0px;
+        
+      }
+    
+    
+    
+    
+    
+    input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+      }
+    
+    .search-container button:hover {
+        background: #ccc;
+      }
+    
+    
+    
+    
+    
+    
+    section {
+        
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    
+    td > .update-btn {
+       
+    }
+    
+    .update-btn {
+        border: none;
+        text-decoration: none;
+        color: #111;
+        background: rgb(251, 255, 0);
+        padding: 5px 7px;
+        border-radius: 0.25rem;
+        
+    }
+    
+    
+    .open-btn {
+        border: none;
+        text-decoration: none;
+        color: #111;
+        background: rgb(0, 162, 255);
+        padding: 5px 7px;
+        border-radius: 0.25rem;
+        
+    }
+    
+    
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .table td, .table th {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: center;
+        font-size: 16px;
+    }
+    
+    .table th {
+        background-color: darkblue;
+        color: #ffffff;
+        
+    }
+    
+    .table tbody tr:nth-child(even){
+        background-color: #f5f5f5;
+    }
+
+
+}
+
+
+
+
+/**************************END PC 1024px**********************/
+
+
+
 /**************************End mobile**********************/
+
+
+
