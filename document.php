@@ -87,7 +87,9 @@
         <!-- START Footer -->
 
         <footer class="footer">
-            © Copyright 2020. All right
+            <div class="footer-p">
+                 <p> © Copyright 2020. All right</p>
+            </div>
 
         </footer>
 

@@ -120,28 +120,7 @@ header {
   }
 
 
-  #customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #customers tr:hover {background-color: #ddd;}
-  
-  #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-  }
+
 
 .search-container {
     float: right;
@@ -175,9 +154,7 @@ section {
     padding-top: 2rem;
 }
 
-td > .update-btn {
-   
-}
+
 
 .update-btn {
     border: none;
@@ -217,8 +194,10 @@ td > .update-btn {
 }
 
 .table th {
-    background-color:#ba68c8;
+    background-color:#7918f2;
     color: #ffffff;
+    
+    
     
 }
 
@@ -226,14 +205,18 @@ td > .update-btn {
     background-color: #f2f2f2;
 }
 
-.table tr:hover {
-    background-color: #ddd;
+.table .row100:hover td {
+    background-color: rgba(218, 24, 24, 0.1);
+}
+
+.table .row100 td:hover {
+    background-color: rgba(218, 24, 24, 0.1);
 }
 
 
 /* ********************mobile 320px ******************/
 
-@media only screen and (max-width: 360px) {
+@media only screen and (min-width: 320px) and (max-width: 374px) {
 
 
     
@@ -269,7 +252,145 @@ td > .update-btn {
         left: 0;
         width: 50%;
         padding-left: 15px;
-        font-size: 12px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+
+
+   
+
+    .menu {   
+        display: none;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 3rem;
+        
+    }
+
+    .menu li > a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: .3s ease-in-out;
+        text-transform: uppercase;
+        
+    }
+
+    .menu.show {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height:auto;
+    }
+
+    .hamburger {
+        display: inline-block;
+        
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .btn {
+        margin: 1rem;
+        justify-self: center;
+    }
+    
+    .button {
+
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 6px 6px;
+        text-align: center;
+        text-decoration: none;
+        
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        transition: .3s ease-in-out;
+    }
+    
+    #hero {
+        width: 100%;
+        height: 90vh;
+
+    }
+
+    img {
+        width: 270px;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        height: 40px;
+        
+        
+      }
+
+    .footer-p {
+        font-size: 10px;
+       
+        
+    }
+    
+
+}
+
+
+/* ******************** END mobile 320px ******************/
+
+/**************************START mobile  375px**********************/
+
+@media only screen and (min-width: 375px) and (max-width: 420px) {
+
+    .table {
+        margin-top: 60px;
+    }
+
+    .table thead , .table th{
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+
+    .table tr{
+        margin-bottom: 15px;
+    }
+
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+
+    }
+
+    
+
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-size: 15;
         font-weight: bold;
         text-align: left;
     }
@@ -331,36 +452,22 @@ td > .update-btn {
     }
 
     img {
-        width: 200px;
+        width: 300px;
         padding-left: 0.5rem;
         padding-bottom: 0.5rem;
     }
 
-
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: black;
-        color: white;
-        text-align: center;
-        height: 50px;
-        padding-top: 15px;
-      }
     
 
 }
 
 
-/* ******************** END mobile 320px ******************/
 
 
-
-
+/* ******************** END mobile 420px ******************/
 /**************************START mobile  480px**********************/
 
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 420px) and (max-width: 480px) {
 
     .table {
         margin-top: 60px;
@@ -468,57 +575,32 @@ td > .update-btn {
 /**************************End mobile 480px**********************/
 
 
-/**************************START mobile  768px**********************/
+/* *************************START mobile  768px**********************/
 
 
-@media only screen and (max-width: 768px) {
-
-    .table {
-        margin-top: 60px;
-    }
-
-    .table thead , .table th{
-        display: none;
-    }
-
-    .table, .table tbody, .table tr, .table td{
-        display: block;
-        width: 100%;
-    }
-
-    .table tr{
-        margin-bottom: 15px;
-    }
-
-    .table td{
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        font-size: 25px;
-
-    }
+@media only screen and (min-width: 600px) and (max-width: 768px) {
 
     
-
-    .table td::before{
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-size: 20px;
-        font-weight: bold;
+    .table td, .table th {
+        padding: 15px 15px;
+        border: 1px solid #ddd;
         text-align: left;
+        font-size: 13px;
     }
 
-
+    .container {
+        max-width: 750px;
+        width: 100%;
+        margin: 0 auto;
+       
+    }
    
 
     .menu {   
         display: none;
         width: 100%;
         padding-top: 0;
-        padding-left: 8rem;
+        padding-left: 21rem;
         
     }
 
@@ -585,7 +667,7 @@ td > .update-btn {
 /**************************End mobile 768px**********************/
 
 /**************************START PC 1024px**********************/
-@media only screen and (max-width: 1024px) {
+/* @media only screen and (max-width: 1024px) {
 
 
 
@@ -814,7 +896,7 @@ td > .update-btn {
 
 
 }
-
+ */
 
 
 

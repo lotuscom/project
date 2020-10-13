@@ -61,13 +61,13 @@ if ($_SESSION['id'] == "") {
  ';
         while ($row = mysqli_fetch_array($result)) {
             $output .= '
-   <tr>
+   <tr class="row100">
 
-        <td data-label="เลขที่เอกสาร">' . $row["document_no"] . '</td>
-        <td data-label="หัวเรื่อง">' . $row["topic"] . '</td>
-        <td data-label="ผู้เกี่ยวข้อง">' . $row["detail"] . '</td>
-        <td data-label="แก้ไข"> <a class="update-btn" href="update_document.php?update=' .  $row["id"] . ' ">Update</a></td>
-        <td data-label="ดูเนื้อหา"> <a class="open-btn" href="upload/' . $row["file"] . ' ">เปิดไฟล์</a></td>
+        <td  data-label="เลขที่เอกสาร">' . $row["document_no"] . '</td>
+        <td  data-label="หัวเรื่อง">' . $row["topic"] . '</td>
+        <td  data-label="ผู้เกี่ยวข้อง">' . $row["detail"] . '</td>
+        <td  data-label="แก้ไข"> <a class="update-btn" href="update_document.php?update=' .  $row["id"] . ' ">Update</a></td>
+        <td  data-label="ดูเนื้อหา"> <a class="open-btn" href="upload/' . $row["file"] . ' ">เปิดไฟล์</a></td>
         
    </tr>
   ';

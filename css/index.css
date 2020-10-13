@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 
@@ -175,106 +176,9 @@ header {
 }
 
 
-/**************************mobile**********************/
-
-@media only screen and (max-width: 480px) {
-    .menu {   
-        display: none;
-        width: 100%;
-        padding-top: 0;
-        padding-left: 8rem;
-        
-    }
-
-    .menu.show {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    header {
-        height:auto;
-    }
-
-    .hamburger {
-        display: inline-block;
-        padding-right: 2rem;
-    }
-
-    .nav-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .btn {
-        margin: 1rem;
-        justify-self: center;
-    }
-    
-    .button {
-
-        background-color: white;
-        border: none;
-        color: black;
-        padding: 10px 10px;
-        text-align: center;
-        text-decoration: none;
-        
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 0.25rem;
-        transition: .3s ease-in-out;
-    }
-    
-    #hero {
-        width: 100%;
-        height: 90vh;
-
-    }
-
-    img {
-        width: 300px;
-        padding-left: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-
-    #hero h1 {
-        margin: 0 0 10px 0;
-        font-size: 25px;
-        font-weight: 700;
-        line-height: 56px;
-        text-transform: uppercase;
-        color: white;
-      }
-
-    #hero h2 {
-        color: white;
-        margin-bottom: 40px;
-        font-size: 18px;
-        margin-top: 0.5rem;
-      }
 
 
-    #hero h3 {
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        font-size: 20px;
-        padding: 10px 30px;
-        margin-bottom: 30px;
-        border-radius: 50px;
-      }
-
-    #hero .hero-container {
-          padding: 0;
-          padding-right: 2rem;
-      }
-
-}
-
-/**************************End mobile**********************/
-
-
-
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 320px) and (max-width: 374px) {
 
     #hero .hero-container {
         padding: 0;
@@ -290,7 +194,14 @@ header {
     }
 
     
-
+    .menu li > a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: .3s ease-in-out;
+        text-transform: uppercase;
+        font-family: sans-serif;
+    }
     
 
     .menu.show {
@@ -324,7 +235,7 @@ header {
         background-color: white;
         border: none;
         color: black;
-        padding: 10px 10px;
+        padding: 6px 6px;
         text-align: center;
         text-decoration: none;
         
@@ -376,4 +287,171 @@ header {
 
 }
 
+
+
+@media only screen and (min-width: 421px) and (max-width: 480px) {
+
+    .menu {   
+        display: none;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 8rem;
+        
+    }
+
+    .menu.show {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height:auto;
+    }
+
+    .hamburger {
+        display: inline-block;
+        
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .btn {
+        margin: 1rem;
+        justify-self: center;
+    }
+    
+    .button {
+
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        transition: .3s ease-in-out;
+    }
+    
+    #hero {
+        width: 100%;
+        height: 90vh;
+
+    }
+
+    img {
+        width: 400px;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    #hero h1 {
+        margin: 0 0 10px 0;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 56px;
+        text-transform: uppercase;
+        color: white;
+      }
+
+    #hero h2 {
+        color: white;
+        margin-bottom: 40px;
+        font-size: 18px;
+        margin-top: 0.5rem;
+      }
+
+
+    #hero h3 {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 20px;
+        padding: 10px 30px;
+        margin-bottom: 30px;
+        border-radius: 50px;
+      }
+
+    #hero .hero-container {
+          padding: 0;
+          
+      }
+
+}
+
+
 /**************************End mobile**********************/
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+
+    
+    .menu {   
+        display: none;
+        width: 100%;
+        padding-top: 0;
+        padding-left: 21rem;
+        
+    }
+
+    .menu.show {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        height:auto;
+    }
+
+    .hamburger {
+        display: inline-block;
+        font-size: 40px;
+        text-align: right;
+        padding-right: 2rem;
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .btn {
+        margin: 1rem;
+        justify-self: center;
+    }
+    
+    .button {
+
+        background-color: white;
+        border: none;
+        color: black;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        transition: .3s ease-in-out;
+    }
+
+    
+    
+    #hero {
+        width: 100%;
+        height: 90vh;
+
+    }
+
+    img {
+        width: 500px;
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    
+
+}
