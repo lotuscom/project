@@ -35,12 +35,12 @@ if ($_SESSION['id'] == "") {
   WHERE document_no LIKE '%" . $search . "%'
   OR topic LIKE '%" . $search . "%' 
   OR detail LIKE '%" . $search . "%'
-  AND sender_id =   $iduser  
+  AND sender_id = ' ".  $iduser . "'
   
  ";
     } else {
         $query = "
-  SELECT * FROM tb_document WHERE sender_id = '$iduser'
+  SELECT * FROM tb_document WHERE sender_id = ' ".  $iduser . "' 
  ";
     }
     $result = mysqli_query($connect, $query);
@@ -51,10 +51,12 @@ if ($_SESSION['id'] == "") {
     <thead>
         
         <th>เลขที่เอกสาร</th>
+        <th>ผู้ฝาก</th>
         <th>หัวเรื่อง</th>
         <th>ผู้เกี่ยวข้อง</th>
         <th>แก้ไข</th>
         <th>ดูเนื้อหา</th>
+        
         
     </thead>
     
@@ -64,6 +66,7 @@ if ($_SESSION['id'] == "") {
    <tr class="row100">
 
         <td  data-label="เลขที่เอกสาร">' . $row["document_no"] . '</td>
+        <td  data-label="หัวเรื่อง">' . $row["sender_id"] . '</td>
         <td  data-label="หัวเรื่อง">' . $row["topic"] . '</td>
         <td  data-label="ผู้เกี่ยวข้อง">' . $row["detail"] . '</td>
         <td  data-label="แก้ไข"> <a class="update-btn" href="update_document.php?update=' .  $row["id"] . ' ">Update</a></td>
@@ -75,7 +78,8 @@ if ($_SESSION['id'] == "") {
         }
         echo $output;
     } else {
-        echo 'Data Not Found';
+         echo 'Data Not Found';
+        
     }
 
     ?>

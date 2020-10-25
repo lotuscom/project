@@ -2,13 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    
 }
 
+nav {
+    width: 1263px;
+    height: 70px;
+}
 
+body {
+    line-height: normal;
+}
 
-
-.container {
+.container2 {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
@@ -24,7 +30,7 @@ header {
 .nav-grid {
     display: grid;
     grid-template-columns: 400px 1fr  ;
-    padding-top: 1rem;
+    padding-top: 15px;
     
 
 }
@@ -33,10 +39,14 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     justify-items: center;
-    padding-top: 0.5rem;
+    padding-top: 17px;
     
     
     
+}
+
+ul {
+    margin-bottom: 0;
 }
 
 .menu li {
@@ -53,11 +63,12 @@ header {
     font-size: 20px;
     transition: .3s ease-in-out;
     text-transform: uppercase;
+    font-family: sans-serif;
     
 }
 
 .menu li > a:hover {
-    background: turquoise;
+    background: #7918f2;
     padding: 5px 10px;
     border-radius: 5px;
     
@@ -76,20 +87,23 @@ header {
     outline: none;
 }
 
-.btn {
-    margin-top: 0.5rem;
+.btn_2 {
+   
     justify-self: end;
+}
+
+.btn_2 a {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
 }
 
 .button {
 
     background-color: white;
     border: none;
-    color: black;
     padding: 15px 15px;
     text-align: center;
-    text-decoration: none;
-    
     font-size: 16px;
     cursor: pointer;
     border-radius: 0.25rem;
@@ -105,6 +119,7 @@ header {
     color: white;
 
 }
+
 
 
 .footer {
@@ -220,24 +235,24 @@ section {
 
 
     
-    .table {
+    /* .table2 {
         margin-top: 60px;
     }
 
-    .table thead , .table th{
+    .table2 thead , .table2 th{
         display: none;
     }
 
-    .table, .table tbody, .table tr, .table td{
+    .table2, .table2 tbody, .table2 tr, .table2 td{
         display: block;
         width: 100%;
     }
 
-    .table tr{
+    .table2 tr{
         margin-bottom: 15px;
     }
 
-    .table td{
+    .table2 td{
         text-align: right;
         padding-left: 50%;
         position: relative;
@@ -246,7 +261,7 @@ section {
 
     
 
-    .table td::before{
+    .table2 td::before{
         content: attr(data-label);
         position: absolute;
         left: 0;
@@ -255,17 +270,18 @@ section {
         font-size: 14px;
         font-weight: bold;
         text-align: left;
+    } */
+
+    table.dataTable.nowrap th, table.dataTable.nowrap td {
+        white-space: normal;
     }
 
-
-
-   
 
     .menu {   
         display: none;
         width: 100%;
         padding-top: 0;
-        padding-left: 3rem;
+        padding-left: 8rem;
         
     }
 
@@ -275,12 +291,14 @@ section {
         font-size: 16px;
         transition: .3s ease-in-out;
         text-transform: uppercase;
+        font-family: sans-serif;
         
     }
 
     .menu.show {
         display: grid;
         grid-template-columns: 1fr;
+        text-align: center;
     }
 
     header {
@@ -358,24 +376,24 @@ section {
 
 @media only screen and (min-width: 375px) and (max-width: 420px) {
 
-    .table {
+    .table2 {
         margin-top: 60px;
     }
 
-    .table thead , .table th{
+    .table2 thead , .table2 th{
         display: none;
     }
 
-    .table, .table tbody, .table tr, .table td{
+    .table2, .table2 tbody, .table2 tr, .table2 td{
         display: block;
         width: 100%;
     }
 
-    .table tr{
+    .table2 tr{
         margin-bottom: 15px;
     }
 
-    .table td{
+    .table2 td{
         text-align: right;
         padding-left: 50%;
         position: relative;
@@ -384,7 +402,7 @@ section {
 
     
 
-    .table td::before{
+    .table2 td::before{
         content: attr(data-label);
         position: absolute;
         left: 0;
@@ -469,24 +487,24 @@ section {
 
 @media only screen and (min-width: 420px) and (max-width: 480px) {
 
-    .table {
+    .table2 {
         margin-top: 60px;
     }
 
-    .table thead , .table th{
+    .table2 thead , .table2 th{
         display: none;
     }
 
-    .table, .table tbody, .table tr, .table td{
+    .table2, .table2 tbody, .table2 tr, .table2 td{
         display: block;
         width: 100%;
     }
 
-    .table tr{
+    .table2 tr{
         margin-bottom: 15px;
     }
 
-    .table td{
+    .table2 td{
         text-align: right;
         padding-left: 50%;
         position: relative;
@@ -495,7 +513,7 @@ section {
 
     
 
-    .table td::before{
+    .table2 td::before{
         content: attr(data-label);
         position: absolute;
         left: 0;
@@ -581,7 +599,7 @@ section {
 @media only screen and (min-width: 600px) and (max-width: 768px) {
 
     
-    .table td, .table th {
+    .table2 td, .table2 th {
         padding: 15px 15px;
         border: 1px solid #ddd;
         text-align: left;

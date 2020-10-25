@@ -78,7 +78,7 @@ if ($_SESSION['id'] == "") {
                         </button>
                         <ul class="menu" id="menu">
                             <li><a href="index.php">Home</a></li>
-                            <li><a href="document.php">Document</a></li>
+                            <li><a href="document_2.php">Document</a></li>
                             <li><a href="upload.php">Upload</a></li>
                             <div class="btn">
                                 <a href="logout.php" class="button">Logout</a>
@@ -135,10 +135,10 @@ if ($_SESSION['id'] == "") {
 
 
                                         <option value="<?php echo $row["personal_name"];
-                                                        echo "&nbsp;&nbsp;&nbsp;";
+                                                        echo "&nbsp;";
                                                         echo $row["personal_lastname"]; ?>">
                                             <?php echo $row["personal_name"];
-                                            echo "&nbsp;&nbsp;&nbsp;";
+                                            echo "&nbsp;";
                                             echo $row["personal_lastname"]; ?>
 
                                         </option>

@@ -86,11 +86,11 @@
                         <tr>
                           <th>ID</th>
                           <th>Username</th>
-                          <th>Firstname</th>
-                          <th>Lastname</th>
-                          <th>Status</th>
-                          <th>Edit</th>
-                          <th>Delete</th>
+                          <th>ชื่อ</th>
+                          <th>นามสกุล</th>
+                          <th>สถานะ</th>
+                          <th>แก้ไข</th>
+                          <th>ลบข้อมูล</th>
                           
                          
                         </tr>

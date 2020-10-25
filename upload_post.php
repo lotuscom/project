@@ -64,11 +64,11 @@
                
                     
                  echo "<script>alert('อัพโหลดสำเร็จแล้ว')</script>";
-                 echo "<script>window.location.href='document.php'</script>";
+                 echo "<script>window.location.href='document_2.php'</script>";
 
             } else {
                 echo "<script>alert('อัพโหลดไม่สำเร็จ')</script>";
-                echo "<script>window.location.href='upload3.php'</script>";
+                echo "<script>window.location.href='upload.php'</script>";
             }
 
 

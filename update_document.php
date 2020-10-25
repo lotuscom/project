@@ -147,10 +147,10 @@
 
 
                                         <option value="<?php echo $row["personal_name"];
-                                                        echo "&nbsp;&nbsp;&nbsp;";
+                                                        echo "&nbsp;";
                                                         echo $row["personal_lastname"]; ?>">
                                             <?php echo $row["personal_name"];
-                                            echo "&nbsp;&nbsp;&nbsp;";
+                                            echo "&nbsp;";
                                             echo $row["personal_lastname"]; ?>
 
                                         </option>

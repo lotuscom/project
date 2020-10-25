@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
-
 
 
 
@@ -12,6 +12,7 @@
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+   
 }
 
 header {
@@ -32,7 +33,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     justify-items: center;
-    padding-top: 0.5rem;
+    padding-top: 1.0rem;
     
     
     
@@ -51,11 +52,13 @@ header {
     color: #fff;
     font-size: 20px;
     transition: .3s ease-in-out;
+    text-transform: uppercase;
+    font-family: sans-serif;
     
 }
 
 .menu li > a:hover {
-    background: turquoise;
+    background: #7918f2;
     padding: 5px 10px;
     border-radius: 5px;
     
@@ -74,21 +77,23 @@ header {
     outline: none;
 }
 
-
 .btn {
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
     justify-self: end;
+}
+
+.btn a {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
 }
 
 .button {
 
     background-color: white;
     border: none;
-    color: black;
     padding: 15px 15px;
     text-align: center;
-    text-decoration: none;
-    
     font-size: 16px;
     cursor: pointer;
     border-radius: 0.25rem;
@@ -104,6 +109,8 @@ header {
     color: white;
 
 }
+
+
 
 
 

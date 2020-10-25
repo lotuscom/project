@@ -31,7 +31,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     justify-items: center;
-    padding-top: 0.5rem;
+    padding-top: 1.0rem;
     
     
     
@@ -50,11 +50,14 @@ header {
     color: #fff;
     font-size: 20px;
     transition: .3s ease-in-out;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    
     
 }
 
 .menu li > a:hover {
-    background: turquoise;
+    background: #7918f2;
     padding: 5px 10px;
     border-radius: 5px;
     
@@ -74,19 +77,22 @@ header {
 }
 
 .btn {
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
     justify-self: end;
+}
+
+.btn a {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
 }
 
 .button {
 
     background-color: white;
     border: none;
-    color: black;
     padding: 15px 15px;
     text-align: center;
-    text-decoration: none;
-    
     font-size: 16px;
     cursor: pointer;
     border-radius: 0.25rem;
@@ -102,7 +108,6 @@ header {
     color: white;
 
 }
-
 
 #hero {
     width: 100%;
@@ -189,11 +194,10 @@ header {
         display: none;
         width: 100%;
         padding-top: 0;
-        padding-left: 4rem;
+        padding-left: 8rem;
         
     }
 
-    
     .menu li > a {
         text-decoration: none;
         color: #fff;
@@ -201,14 +205,13 @@ header {
         transition: .3s ease-in-out;
         text-transform: uppercase;
         font-family: sans-serif;
+        
     }
-    
 
     .menu.show {
         display: grid;
         grid-template-columns: 1fr;
-        
-        
+        text-align: center;
     }
 
     header {
@@ -252,10 +255,30 @@ header {
     }
 
     img {
-        width: 275px;
+        width: 270px;
         padding-left: 0.5rem;
         padding-bottom: 0.5rem;
     }
+
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        color: white;
+        height: 40px;
+        
+        
+      }
+
+    .footer-p {
+        font-size: 10px;
+       
+        
+    }
+    
 
     #hero h1 {
         margin: 0 0 10px 0;
